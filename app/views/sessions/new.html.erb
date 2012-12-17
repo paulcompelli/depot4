@@ -1,0 +1,27 @@
+<div class="depot_form" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <% if flash[:alert] %>
+      <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+  <%= form_tag do %>
+      <fieldset>
+        <legend>Please Log In</legend>
+
+        <div>
+          <ul>
+          <li><%= label_tag :name, 'Name:' %></li>
+          <%= text_field_tag :name, params[:name] %>
+          </ul>
+        </div>
+        <div>
+          <ul>
+          <li><%= label_tag :password, 'Password:' %></li>
+          <%= password_field_tag :password, params[:password] %>
+          </ul>
+        </div>
+        <div>
+          <%= submit_tag "Login" %>
+        </div>
+      </fieldset>
+  <% end %>
+</div>
+
