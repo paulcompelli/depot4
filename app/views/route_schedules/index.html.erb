@@ -1,0 +1,33 @@
+<h1>Listing route_schedules</h1>
+
+<table>
+  <tr>
+    <th>Departure time</th>
+    <th>Stop</th>
+    <th>Integer</th>
+    <th>Outbound</th>
+    <th>Inbound</th>
+    <th>Capacity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @route_schedules.each do |route_schedule| %>
+  <tr>
+    <td><%= route_schedule.departure_time %></td>
+    <td><%= route_schedule.stop_id %></td>
+    <td><%= route_schedule.integer %></td>
+    <td><%= route_schedule.outbound %></td>
+    <td><%= route_schedule.inbound %></td>
+    <td><%= route_schedule.capacity %></td>
+    <td><%= link_to 'Show', route_schedule %></td>
+    <td><%= link_to 'Edit', edit_route_schedule_path(route_schedule) %></td>
+    <td><%= link_to 'Destroy', route_schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Route schedule', new_route_schedule_path %>

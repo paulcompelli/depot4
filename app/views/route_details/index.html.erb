@@ -1,0 +1,32 @@
+<h1>Listing route_details</h1>
+
+<table>
+  <tr>
+    <th>Route</th>
+    <th>Stop</th>
+    <th>Stop name</th>
+    <th>Minutes from start</th>
+    <th>Zone no</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @route_details.each do |route_detail| %>
+  <tr>
+    <td><%= route_detail.route_id %></td>
+    <td><%= route_detail.stop_id %></td>
+    <td><%= route_detail.stop_name %></td>
+    <td><%= route_detail.minutes_from_start %></td>
+    <td><%= route_detail.zone_no %></td>
+    <td><%= link_to 'Show', route_detail %></td>
+    <td><%= link_to 'Edit', edit_route_detail_path(route_detail) %></td>
+    <td><%= link_to 'Destroy', route_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Route detail', new_route_detail_path %>
+

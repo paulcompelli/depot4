@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>No of zones:</b>
+  <%= @ticket_price.no_of_zones %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @ticket_price.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_ticket_price_path(@ticket_price) %> |
+<%= link_to 'Back', ticket_prices_path %>

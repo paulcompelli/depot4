@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Departure time:</b>
+  <%= @route_schedule.departure_time %>
+</p>
+
+<p>
+  <b>Stop:</b>
+  <%= @route_schedule.stop_id %>
+</p>
+
+<p>
+  <b>Integer:</b>
+  <%= @route_schedule.integer %>
+</p>
+
+<p>
+  <b>Outbound:</b>
+  <%= @route_schedule.outbound %>
+</p>
+
+<p>
+  <b>Inbound:</b>
+  <%= @route_schedule.inbound %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%= @route_schedule.capacity %>
+</p>
+
+
+<%= link_to 'Edit', edit_route_schedule_path(@route_schedule) %> |
+<%= link_to 'Back', route_schedules_path %>

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cart:</b>
+  <%= @ticket.cart_id %>
+</p>
+
+<p>
+  <b>Travel date:</b>
+  <%= @ticket.travel_date %>
+</p>
+
+<p>
+  <b>Travel time:</b>
+  <%= @ticket.travel_time %>
+</p>
+
+<p>
+  <b>Starting bus stop:</b>
+  <%= @ticket.starting_bus_stop_id %>
+</p>
+
+<p>
+  <b>Finishing bus stop:</b>
+  <%= @ticket.finishing_bus_stop_id %>
+</p>
+
+<p>
+  <b>Ticket price:</b>
+  <%= @ticket.ticket_price_id %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @ticket.price %>
+</p>
+
+<p>
+  <b>Random ticket code:</b>
+  <%= @ticket.random_ticket_code %>
+</p>
+
+<p>
+  <b>Route schedule:</b>
+  <%= @ticket.route_schedule_id %>
+</p>
+
+<p>
+  <b>Direction:</b>
+  <%= @ticket.direction %>
+</p>
+
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>

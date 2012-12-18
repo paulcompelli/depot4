@@ -1,9 +1,5 @@
 Depot::Application.routes.draw do
 
-  get "routes/index"
-
-  get "routes/show"
-
   get 'admin' => 'admin#index'
 
   controller :sessions do
@@ -14,21 +10,23 @@ Depot::Application.routes.draw do
 
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
-  resources :users
-
-  resources :orders
-
-  resources :line_items
 
   resources :carts
-
-  resources :routes
-
-  get "store/index"
-
+  resources :line_items
+  resources :orders
   resources :products do
     get :who_bought, on: :member
   end
+  resources :routes
+  resources :route_details
+  resources :route_schedules
+  resources :tickets
+  resources :ticket_prices
+  resources :users
+
+  get "store/index"
+  get "store/show"
+  match "search_request" => "store#search_results", :as => :search_request, :method => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

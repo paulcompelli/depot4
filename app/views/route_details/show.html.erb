@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Route:</b>
+  <%= @route_detail.route_id %>
+</p>
+
+<p>
+  <b>Stop:</b>
+  <%= @route_detail.stop_id %>
+</p>
+
+<p>
+  <b>Stop name:</b>
+  <%= @route_detail.stop_name %>
+</p>
+
+<p>
+  <b>Minutes from start:</b>
+  <%= @route_detail.minutes_from_start %>
+</p>
+
+<p>
+  <b>Zone no:</b>
+  <%= @route_detail.zone_no %>
+</p>
+
+
+<%= link_to 'Edit', edit_route_detail_path(@route_detail) %> |
+<%= link_to 'Back', route_details_path %>

@@ -46,10 +46,19 @@
           <li><%= link_to 'Orders',   orders_path   %></li>
           <li><%= link_to 'Products', products_path %></li>
           <li><%= link_to 'Users',    users_path    %></li>
+          <li><%= link_to 'Routes',    routes_path    %></li>
+          <li><%= link_to 'Tickets',    tickets_path    %></li>
         </ul>
         <%= button_to 'Logout', logout_path, method: :delete   %>
     <% end %>
     <!-- END_HIGHLIGHT -->
+
+    <%= form_tag search_request_url, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search_for_this, params[:search_for_this] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+    <% end %>
   </div>
   <div id="main">
     <%= yield %>

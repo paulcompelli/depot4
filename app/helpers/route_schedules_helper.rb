@@ -1,0 +1,2 @@
+module RouteSchedulesHelper
+end

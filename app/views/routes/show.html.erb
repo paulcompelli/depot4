@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Outbound code:</b>
+  <%= @route.outbound_code %>
+</p>
+
+<p>
+  <b>Inbound code:</b>
+  <%= @route.inbound_code %>
+</p>
+
+<p>
+  <b>Return route:</b>
+  <%= @route.return_route %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%= @route.start %>
+</p>
+
+<p>
+  <b>Finish:</b>
+  <%= @route.finish %>
+</p>
+
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>
