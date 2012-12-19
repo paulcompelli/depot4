@@ -65,6 +65,20 @@
     <% end %>
   </div>
   <div id="main">
+
+
+    <% if flash[:notice] %>
+        <p style="color:white;background-color:green;">
+          <%= flash[:notice] %> <!--wnt to see flash tag -->
+        </p>
+    <% end %>
+
+    <% if flash[:notice] %>
+        <p style="color:#ffffff;background-color:orange;">
+          <%= flash[:alert] %> <!--wnt to see flash tag -->
+        </p>
+    <% end %>
+
     <%= yield %>
   </div>
 </div>

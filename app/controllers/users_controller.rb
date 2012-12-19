@@ -1,13 +1,19 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+  skip_before_filter :authorize, :only => [:new, :create]
+
   def index
-    @users = User.order(:name)
+    @users = User.all
+    #@users = User.order(:name)
+=begin
     @cart = current_cart
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
+
     end
+=end
   end
 
   # GET /users/1
@@ -39,21 +45,18 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-  def create
-    @user = User.new(params[:user])
+    def create
+      @user = User.new(params[:user])
 
-    respond_to do |format|                    #not in tut
-      if @user.save
-        format.html { redirect_to users_url,    #not in tut
-                                  notice: "User #{@user.name} was successfully created." } #diff in tut
-        format.json { render json: @user,        #not in tut
-                             status: :created, location: @user }     #not in tut
-      else
-        format.html { render action: "new" }  #diff in tut
-        format.json { render json: @user.errors,       #not in tut
-                             status: :unprocessable_entity }   #not in tut
+      respond_to do |format|                    #not in tut
+        if @user.save
+          format.html { redirect_to root_url,notice: "User #{@user.name} was successfully created." } #diff in tut
+          format.json { render json: @user,status: :created, location: @user }     #not in tut
+        else
+          format.html { render action: "new" }  #diff in tut
+          format.json { render json: @user.errors, status: :unprocessable_entity }   #not in tut
+        end
       end
-    end
   end
 
   # PUT /users/1
