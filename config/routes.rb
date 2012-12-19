@@ -1,6 +1,9 @@
 Depot::Application.routes.draw do
 
   get 'admin' => 'admin#index'
+  get 'route_detail' => 'route_detail#index'
+  get 'route_schedule' => 'route_schedule#index'
+  get 'ticket_price' => 'ticket_price#index'
 
   controller :sessions do
     get  'login' => :new
@@ -22,8 +25,10 @@ Depot::Application.routes.draw do
   resources :route_schedules
   resources :tickets
   resources :ticket_prices
-  resources :users
+  resources :users #same at tut
 
+  #get "route_details/index"
+  #get "route_schedule/index"
   get "store/index"
   get "store/show"
   match "search_request" => "store#search_results", :as => :search_request, :method => :post

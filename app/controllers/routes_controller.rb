@@ -1,4 +1,5 @@
 class RoutesController < ApplicationController
+  skip_before_filter :authorize
   # GET /routes
   # GET /routes.json
   def index

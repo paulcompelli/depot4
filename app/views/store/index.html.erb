@@ -4,15 +4,17 @@
 
 <h1>Your HELLO!!! Routes</h1>
 
-<% @products.each do |product| %>
+
+<% @routes.each do |route| %>
     <div class="entry">
-      <%= image_tag(product.image_url) %>
-      <h3><%= product.title %></h3>
-      <p><%= sanitize(product.description) %></p>
+
+      <h3>Outbound route: <%= route.outbound_code%> From: <%= route.start%> To: <%= route.finish%></h3>
+      <h4>Inbound route:  <%= route.inbound_code%> From: <%= route.finish%> To: <%= route.start%></h4>
+      <p>9 stops on this route, 3 stops per zone, ticket prices are based on the number of zones travelled. </p>
+
+
       <div class="price_line">
-        <span class="price"><%= number_to_currency(product.price) %></span>
-        <%= button_to 'Add to Cart', line_items_path(product_id: product),
-        remote: true %>
+
       </div>
     </div>
 <% end %>
