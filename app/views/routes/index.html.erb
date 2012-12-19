@@ -20,10 +20,12 @@
     <td><%= route.start %></td>
     <td><%= route.finish %></td>
     <td><%= link_to 'Show', route %></td>
-    <td><%= link_to 'Edit', edit_route_path(route) %></td>
+    <% if current_user and current_user.admin %>
+  <td><%= link_to 'Edit', edit_route_path(route) %></td>
     <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+ <% end %>
 </table>
 
 
